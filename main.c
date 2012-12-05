@@ -51,6 +51,21 @@ int getId(ul port, ul pin) {
 	}
 }
 
+/*
+ * Can use PORTF pins 0 - 4
+ *         PORTB pins 0 - 7
+ *         PORTC pins 0 - 3
+ *
+ * Cannot use these pins together:
+ *   PB6 and PF0
+ *   PB7 and PF1
+ *   PF2 and PB4
+ *   PF3 and PB5
+ *   PF4 and PB0
+ *
+ * You can use up to 12 pins for different pwm output
+ */
+
 void timerInit(ul port, ul pin) {
 	int id = getId(port, pin);
 
